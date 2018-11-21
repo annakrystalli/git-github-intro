@@ -1,0 +1,337 @@
+---
+title: "Collaborative `Github` in `Rstudio`"
+author: "ACCE Research Data and Project Management"
+date: "01-02 May 2018, TUoS"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+    theme: flatly
+    highlight: textmate
+  xaringan::moon_reader:
+    css: ["default", "../assets/css/little_ak.css", "../assets/css/little_ak-fonts.css"]
+    lib_dir: libs
+    nature:
+      beforeInit: "https://platform.twitter.com/widgets.js"
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+```{r, echo=FALSE, message=FALSE}
+library(dplyr)
+library(magick)
+```
+ 
+# Session Roadmap
+
+<br>
+
+### 1 Introductions 
+
+
+#### - **get to know github** 
+
+  - github as a computational research tool
+
+
+### 2 Get stuck in
+
+
+#### - [Collaborative github through rstudio](https://nhm-stars.github.io/materials/day04/evolottery.html) #EvoLottery (40 mins)
+  - In this exercise, each participant will fork a github repo, and contribute a file required to simulate the **evolutionary trajectory of an imaginary species' body size**.
+  
+  - We'll use github to collate all species files and plot them all up together at the end! We'll also **discover the skull and beak shapes** associated with each simulated species size.
+
+
+---
+
+
+### introductions: **get to know github** 
+
+***
+---
+
+
+
+## **version control technologies**
+
+### **GitHub**
+
+- #### More than a simple source code hosting service. 
+    + Provides a dynamic and collaborative social coding platform  
+
+<br>
+<center>
+<img src="http://www.palermo.edu/Archivos_content/ingenieria/top/130712_git_github_topdenota1.jpg" width="250px" /> 
+</center>
+
+
+
+---
+
+
+# Next Gen Science
+
+***
+---
+
+## modern science workflows
+
+***can be overwhelming***
+
+<img src="../assets/workflows.png" width="500px" />
+
+<br>
+
+---
+
+## **Next Generation Science demands**
+
+- #### **science increasingly computational**
+
+    > demands for increased openness, transparency & reproducibility
+    
+- #### **science always benefits from collaboration**
+
+    > push to harness the power of the internet 
+
+<br>  
+
+---
+
+## succesful modern science workflows
+
+***can be extremely powerful***
+
+<img src="../assets/collab.png" width="500px" />
+
+<br>
+<br>
+
+---
+
+
+# **GitHub for science**
+
+***
+
+---
+
+<br>
+
+[![](../assets/git4sci.png)](http://scfbm.biomedcentral.com/articles/10.1186/1751-0473-8-7)
+
+
+
+> - ideal for managing the full suite of research outputs such as datasets, statistical code, figures, lab notes, and manuscripts.
+
+> - supports peer review, commenting, and discussion. 
+
+> - Diverse range of efforts, from individual to large bioinformatics projects, laboratory repositories, as well as global collaborations have found a home on GitHub
+
+<br>
+
+---
+
+## **Rstudio for r users**
+
+![](https://status.github.com/images/invertocat.png)
+
+<br> 
+
+**♡**
+
+<img src="https://pbs.twimg.com/profile_../assets/487277095681150976/aEp2vlJy.png" width="200px" />
+
+<br>
+<br>
+
+---
+
+
+# **GitHub features**
+
+
+
+
+<img src="../assets/remotes.png">
+
+
+---
+
+## remote repositories
+
+centralising information e.g. [**weecology** / ***"Nine simple ways to make it easier to (re)use your data" paper***](http://ojs.library.queensu.ca/index.php/IEE/article/view/4608/0)
+
+[<img src="../assets/repo-1.png" width="500px"/>](https://github.com/weecology/data-sharing-paper)
+
+<br>
+---
+## commits
+
+traceability
+
+[<img src="../assets/commits-1.png" width="500px"/>](https://github.com/ropensci/rfishbase/commits/master)
+
+<br>
+---
+
+## issues
+
+project management
+
+[<img src="../assets/issues-1.png" width="500px"/>](https://github.com/weecology/data-sharing-paper/issues)
+
+<br>
+---
+
+## graphs 
+
+### project & team tracking
+
+tracking contributors
+
+[<img src="../assets/track-1.png" width="500px"/>](https://github.com/weecology/data-sharing-paper/graphs/contributors)
+
+---
+tracking commits
+
+[<img src="../assets/track-2.png" width="500px"/>](https://github.com/weecology/data-sharing-paper/network)
+
+<br>
+---
+
+
+# **entire process of project evolution reproducible**
+
+<br>
+<br>
+
+---
+
+## Host Research Websites!
+
+
+
+
+
+
+
+---
+
+
+
+## **more on github for science**
+
+<br>
+
+#### [**Ten Simple Rules for Taking Advantage of Git and GitHub**](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4945047/)
+
+#### **Github as part of** [**Good Enough Practices in Scientific Computing**](https://arxiv.org/abs/1609.00037)
+
+#### e.g [***My research workflow, based on Github***](https://status.github.com/../assets/invertocat.png) by [*Carl Boettiger*](https://twitter.com/cboettig)
+
+<br>
+
+---
+
+## **Example `GitHub` uses**
+
+[![](../assets/example_table.png)](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4945047/table/pcbi.1004947.t001/)
+
+https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4945047/
+
+
+
+
+
+---
+
+## **Practical: Github & Rstudio for collaborative coding**
+### **#EvoLottery**
+
+**Beak and skull shapes in birds of prey (“raptors”) are strongly coupled and largely controlled by size.** 
+
+
+  - In this exercise, each participant will **fork a github repo**, and **contribute a file** required to simulate the *evolutionary trajectory of an imaginary species' body size*.
+
+
+  - We'll use **github** to **collate all species files** and **plot** them all up together at the end! We'll also **discover the skull and beak shapes** associated with each simulated species size.
+
+### [**Enter Practical**](https://nhm-stars.github.io/materials/day04/evolottery.html)
+
+<https://nhm-stars.github.io/materials/day04/evolottery.html>
+
+---
+
+## RECAP Forking
+
+<img src="../assets/clone.png">
+
+
+
+---
+
+# Back to our project.
+
+We've initiated our project as a github repository but not connected it to remote repository on **GitHub**
+
+In the **Evolottery** exercise we used a method of linking to a repository by **cloning** one that **already exists on GitHub**. Now we want to do the opposite.
+
+```{r, eval=FALSE}
+usethis::use_github()
+```
+
+
+*if for some reason it creates the repository on GitHub but doesn't push the contents, try running* `git push origin master` *in the terminal/shell*
+
+---
+
+There are **two very important documents misising in our repository 
+
+1. A README
+2. A License
+
+Let's go create an issue in our repository about this.
+
+
+---
+
+#### README
+
+READMEs are the landing page of any repository on GitHub. 
+
+
+
+```{r, eval=FALSE}
+usethis::use_readme_md()
+```
+Creates a simple **`md`** README
+
+
+```{r, eval=FALSE}
+usethis::use_readme_rmd()
+```
+Creates an **`Rmd`** README in which you can run R examples and automatically creates the `README.md`.
+- Render each time you make changes to `README.Rmd` so `README.md` is updated.
+
+
+---
+
+### License
+
+```{r, eval=FALSE}
+usethis::use_mit_license("Anna Krystalli")
+```
+
+
+```{r, echo=FALSE}
+magick::image_read("../assets/LICENSE.png") %>% image_resize("200x700")
+```
+
+
+```{r, echo=FALSE}
+magick::image_read("../assets/LICENSEmd.png") %>% image_resize("400x700")
+
+```

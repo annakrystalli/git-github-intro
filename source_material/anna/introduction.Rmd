@@ -1,0 +1,259 @@
+---
+title: "Introduction"
+author: "ACCE Research Data and Project Management"
+date: "01-02 May 2018, TUoS"
+output: 
+  xaringan::moon_reader:
+    css: ["default", "../assets/css/little_ak.css", "../assets/css/little_ak-fonts.css"]
+    lib_dir: libs
+    nature:
+      beforeInit: "https://platform.twitter.com/widgets.js"
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+  html_document:
+    toc: true
+    toc_float: true
+    theme: flatly
+    highlight: textmate
+---
+
+# Welcome
+
+## Course Outline <http://annakrystalli.me/ACCE/>
+
+### Today
+
+- Introduction
+- Basic Data Hygiene
+- Tidy data & Metadata
+- Project Organisation
+
+### Tomorrow
+
+- Literate Programming with rmarkdown
+- Version Control with Git
+- Collaborating through GitHub
+- Bringing it all together
+
+---
+
+## Why are we here?
+
+### The paper is the advertisement
+
+
+> “an article about computational result is advertising, not scholarship. The actual scholarship is the **full software environment, code and data, that produced the result.**”
+
+*John Claerbout paraphrased in [Buckheit and Donoho (1995)](https://statweb.stanford.edu/~wavelab/Wavelab_850/wavelab.pdf)*
+
+### [The Scientific Paper Is Obsolete](https://www.theatlantic.com/science/archive/2018/04/the-scientific-paper-is-obsolete/556676/)
+Here's what's next
+
+*<small>APR 5, 2018, The Atlantic</small>*
+
+
+<img src="../assets/SciencePaperFlames-New.gif" height="100px" width="350px">
+
+
+---
+## Reproducibility/Replicability crisis
+
+- Many issues statistical and a results of broken Academic incentive systems.
+
+- Much can be tackled by transparency and better computational literacy.
+
+<img src="../assets/woes.png" width="450px">
+
+---
+
+### [Reproducible Research in Computational Science](http://science.sciencemag.org/content/334/6060/1226)
+ROGER D. PENG, SCIENCE 02 DEC 2011 : 1226-1227
+
+> Reproducibility has the potential to serve as a minimum standard for judging scientific claims when full independent replication of a study is not possible.
+
+<img src="../assets/repro-spectrum.jpg" width=550px>
+
+---
+
+## Reinventing Discovery -> Open Sourcing science
+
+
+- Sharing resources
+- Collective intelligence
+- Mass collaboration
+
+<img src="../assets/reinventing-innovation.png" height="300px">
+
+---
+
+## Open Science == key to next generation science
+
+
+## the internet
+
+### built for open science
+
+<img src="../assets/www.jpg" width=500px>
+
+<br>
+
+---
+
+
+
+## **The grand vision**
+
+### Hans Rosling on open data (and data science) back in 2006
+
+<iframe width="470" height="250" src="https://goo.gl/ry6AiG" frameborder="0" allowfullscreen></iframe>
+
+> How do we get there?
+
+---
+
+## **21st Century Research meta-responsibilities**
+
+Better digital curation of the workhorses of modern science: **code** & **data**
+
+- accessible
+- reusable
+- searchable
+<center>
+<h3><b>We all need to do our bit</b></h3>
+<img src="https://metrouk2.files.wordpress.com/2012/08/article-1344528089185-0d5e3c8900000578-276474_636x362.jpg" height=250px>
+</center>
+
+---
+
+## **Getting a handle on our research materials**
+
+<center>
+<img src="../assets/img/beer_messy_tidy.png" height="200px" width="350px">
+</center>
+
+<br>
+<br>
+
+---
+
+## **Drivers of better digital management**
+
+- Funders: value for money, impact, reputation
+- Publishers: many now require code and data.
+    + Specialist journals for **software** (e.g [Journal of Open Source Software](http://joss.theoj.org/) and **data** (e.g. [Scientific Data](https://www.nature.com/sdata/)) have emerged.
+- Your wider scientific community
+- PIs, Supervisors and immediate research group
+
+---
+
+### **Yourselves!**
+**Be your own best friend:**
+
+> **aim to create secure materials that are [FAIR](https://www.nature.com/articles/sdata201618)**
+> *findable, accessible, interoperable, reusable*
+
+
+- Think about traceablility and provencance
+- Follow community conventions
+- Prepare it to share it
+
+---
+
+## Back to "Why are we here?"
+
+
+- To help you make the most of the real workhorses of your work, **YOUR CODE & DATA**!
+
+- To help you be empowered by modern tools & technologies rather than be overwhelmed by them
+
+- To help you lead the culture change rather than be burdened by increased requirements
+
+- Ultimately, to **change how science works for better for everyone**!
+
+
+<img src="../assets/gwilson.png" height="200px">
+
+<script>window.twttr = (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0],
+    t = window.twttr || {};
+  if (d.getElementById(id)) return t;
+  js = d.createElement(s);
+  js.id = id;
+  js.src = "https://platform.twitter.com/widgets.js";
+  fjs.parentNode.insertBefore(js, fjs);
+
+  t._e = [];
+  t.ready = function(f) {
+    t._e.push(f);
+  };
+
+  return t;
+}(document, "script", "twitter-wjs"));</script>
+
+
+---
+
+# Resources
+
+---
+
+## BES guide to data management 
+
+<img src="../assets/img/BES.png" height=300px>
+
+<br>
+
+This guide for early career researchers explains what data and data management are, and provides advice and examples of best practices in data management, including case studies from researchers currently working in ecology and evolution.
+
+<br>
+
+#### [download](http://www.britishecologicalsociety.org/wp-content/uploads/Publ_Data-Management-Booklet.pdf)
+
+---
+
+## BES guide to reproducible code 
+
+<img src="https://methodsblog.files.wordpress.com/2017/12/code-cover.jpg?w=424&h=600" height=300px>
+
+A Guide to Reproducible Code covers all the basic tools and information you will
+need to start making your code more reproducible. We focus on R and Python, but
+many of the tips apply to any programming language.
+
+#### [download](https://www.britishecologicalsociety.org/wp-content/uploads/2017/12/guide-to-reproducible-code.pdf)
+
+---
+
+### Further reading
+
+- [**Blog post**](https://dynamicecology.wordpress.com/2016/08/22/ten-commandments-for-good-data-management/) **by Dynamic ecology** [\@DynamicEcology](https://twitter.com/DynamicEcology)
+- [**rOpenSci Reproducibility in Science:** 
+A Guide to enhancing reproducibility in scientific results and writing](http://ropensci.github.io/reproducibility-guide/)
+- [**Nine simple ways to make it easier to (re)use your data**](http://ojs.library.queensu.ca/index.php/IEE/article/view/4608/4898)
+
+---
+
+## Training materials
+
+**The Carpentries**
+
+- **Domain specific lessons in Software & Data available** [**free online**](https://carpentries.org/)
+    + Ecology materials
+    + Genomics materials
+    + Geospatial data materials
+    + Biology semester long materials
+
+
+---
+
+# Before we dive in
+
+- I've tried to focus on concepts and tools that I wish I knew when I started
+
+- I will try and give a broad overview rather that dig too deeply
+
+- PLEASE STOP ME if I use jargon you don't understand or need some clarification.
+
+
+
+

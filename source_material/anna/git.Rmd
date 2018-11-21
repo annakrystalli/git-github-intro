@@ -1,0 +1,335 @@
+---
+title: "Version Control with Git"
+author: "ACCE Research Data and Project Management"
+date: "01-02 May 2018, TUoS"
+output: 
+  xaringan::moon_reader:
+    css: ["default", "../assets/css/little_ak.css", "../assets/css/little_ak-fonts.css"]
+    lib_dir: libs
+    nature:
+      beforeInit: "https://platform.twitter.com/widgets.js"
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+  html_document:
+    toc: true
+    toc_float: true
+    theme: flatly
+    highlight: textmate
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+
+## What is Version control? `r emo::ji("thinking")`
+
+The **management of changes** to documents, computer programs, large web sites, and other collections of information.
+
+### Where did it come from?
+
+> The need for a logical way to organize and control revisions has existed for almost as long as writing has existed,  but revision control became much more important, and complicated when the era of computing began
+
+**version control examples**
+
+- Numbering of book editions
+- Wikipedia's Page history
+
+
+---
+
+### Elements of a Version Control system
+
+- Changes are usually identified by a number or letter code, termed the "revision number"
+
+- Each revision is associated with a timestamp and the person making the change. 
+
+- Only changes to a file are recorded rather than saving a whole new copy.
+
+- Revisions can be compared, restored, and with some types of files, merged.
+
+---
+
+## What is git?
+
+An open source (free to use) Version control system
+
+![](https://avatars3.githubusercontent.com/u/18133?s=200&v=4)
+
+
+---
+
+### Where did it come from?
+
+Git development began in 2006 after many developers of the Linux kernel gave up access to [BitKeeper](http://www.bitkeeper.org/) (at the time the best but proprietary)
+
+Linus Torvalds on the name **`git`**: 
+
+> "I'm an egotistical bastard, and I name all my projects after myself. First 'Linux', now 'git'
+
+<small>More on the name in the source code original [readme](https://github.com/git/git/tree/e83c5163316f89bfbde7d9ab23ca2e25604af290) file</small>
+
+---
+
+## Why use it in research? 
+
+### Exhibit A
+
+![](http://smutch.github.io/VersionControlTutorial/_images/vc-xkcd.jpg)
+
+---
+
+### Exhibit B
+
+
++ mythesis_draft.docx
++ mythesis_final.docx
++ mythesis_final_from_supervisor.docx
++ mythesis_final_from_supervisor_corrected.docx
++ etc. *ad infinitum*
+
+
+---
+
+### Before: git only through the terminal
+
+![](../assets/git_status.png)
+
+---
+
+## Rstudio & `usethis` to the rescue!
+
+### Rstudio + `usethis` `r emo::ji("package")` == heavenly `Git` & `GitHub`
+
+- Initialise **Rstudio project** with Git by **just checking a box!**
+    - Forgot to? use `usethis::use_git()`
+
+- visual panel to easily see the status of all your files
+
+- interactive navigation through file version history
+
+
+---
+
+
+## How does `Git` work?
+
+When a local directory becomes ***initialised with git***, a **hidden `.git` folder is added** to it.
+
+> it's now called a **repository**
+
+
+- New copies of files you tell git to track will be **added** to that `.git` folder.
+
+
+- After adding, git will track any modifications to those files
+
+
+---
+
+
+
+### first commit - whole file added
+
+- Any file unknown to git will have a yellow ? box next to it.
+
+<img src="../assets/git-unadded.png" height="75px">
+
+- The first time you commit a file you are **adding** it to `.git`, effectively telling it to start tracking the file
+
+<img src="../assets/commit1.png" height="400px">
+
+
+
+
+---
+
+### second commit - only difference added
+
+- in any subsequent commit of the same file, only changes are recorded
+
+
+
+
+![](../assets/commit2.png)
+
+
+---
+
+All changes have been committed so the git panel is clear
+
+![](../assets/commit2-file.png)
+
+
+---
+
+## Enough theory, how about in practice!
+
+### First, `git` needs to know who you are so your commits can be attributed to you
+
+**`usethis`** to the rescue again!!
+
+
+**Check your configuration**
+
+```{r, eval=FALSE}
+usethis::use_git_config()
+```
+
+
+**Set your configuration**
+
+```{r, eval=FALSE}
+usethis::use_git_config(
+    user.name = "Jane",
+    user.email = "jane@example.org")
+```
+
+
+---
+
+## Set up GITHUB PAT
+
+
+You'll need a Personal Authorisation Token (PAT).
+
+```{r, eval=F}
+usethis::browse_github_pat()
+```
+
+will open up the GitHub panel to generate your PAT. 
+
+
+<img src="../assets/browse_github.png" height="300px">
+
+
+---
+
+Copy it and paste it into your `.Renviron` file as system variable `GITHUB_PAT`.
+
+```{r, eval=F}
+usethis::edit_r_environ()
+```
+
+Use `edit_r_environ()` to open and edit your `.Renviron` file
+
+
+```{r, echo=FALSE}
+magick::image_read("../assets/GITHUB_PAT.png")
+```
+
+----
+
+## Turn our project into a repository
+
+If you didn't initialise git at the beginning of your project, you can do so now with:
+
+```{r, eval = F}
+usethis::use_git()
+```
+
+> This however commits everything in one go. So not ideal! I recommend using git from the start of every project.
+
+If you haven't committed all your files do so now.
+
+Let's go have a look at the history `r emo::ji("clock3")`
+
+---
+
+## Making a change to our  `gapminder-analysis.Rmd`
+
+In the last plot of your `Rmd`, see if you can add a smooth for each continent to generate the plot below (should be just one extra function added to the plot)
+
+
+
+```{r, echo =FALSE, warning=FALSE, message=FALSE, fig.height=5}
+library(dplyr)
+library(ggplot2)
+
+gapminder::gapminder %>% ggplot(aes(x = gdpPercap, y = lifeExp, color = continent)) +
+    geom_point() + scale_x_log10() + geom_smooth()
+```
+
+---
+
+## Commit your change
+
+- Have a look at the differences
+
+- Have a look at the history
+
+
+---
+
+
+## Deleting files
+
+- Create a new file, any type of file.
+<img src="../assets/dead-man-new.png" height="200px">
+
+- Commit it.
+
+- Delete it
+<img src="../assets/dead-man-delete.png" height="75px">
+
+- Commit the deletion
+
+- Look back through the history
+
+
+---
+
+# `.gitignore`
+
+There may be files that you don't want to commit to git, e.g. 
+
+- data files that are too large
+
+- documents with sensitive information (eg authorisation tokens etc)
+
+- intermediate files that you don't need to save copies of.
+
+> Tell git to ingnore them by adding them to the `.gitignore` file.
+
+
+---
+
+## `gitignore` regex
+
+You can use `regex` in `.gitignore` files to ignore files according to a pattern. 
+
+- `*.html` will ignore any file ending in  `.html` 
+
+- prefix "!" which negates the pattern
+
+    ```
+    data/
+    !data/commit-this.csv
+    ```
+
+---
+
+### `Git` tips
+
+- commit early, commit often
+- commit logical bits of work together
+- write meaninful messages
+
+
+---
+
+## Further Resources
+
+- [Git-it](http://jlord.us/git-it/)
+- [Happy with Git](http://happygitwithr.com/)
+- [Oh Shit Git](http://ohshitgit.com/)
+
+
+---
+
+## Never forget
+
+![](https://optimalbi.com/wp-content/uploads/2018/02/gitsave-300x210.png)
+
