@@ -1,0 +1,41 @@
+h3 { font-family: "Courier New",sans-serif !important; }
+.reveal section pre { font-size: 0.75em; }
+.reveal .slides section .column1 { left: auto; }
+strong { color: black !important; }
+
+.center {
+    text-align: center;
+}
+
+.left {
+  text-align: left;
+}
+
+.footer {
+    position: fixed;
+    top: 90%;
+    text-align: center;
+    width: 100%;
+    font-style: italic !important;
+    font-size: 0.7em !important;
+}
+
+.hidden { visibility: hidden; }
+
+code.inline, pre { color: #5482ae; padding-right: 0.1em; }
+
+div.title-img {
+  float:right;
+  position:absolute;
+  bottom:0;
+  right:0;
+  line-height:0.85;
+  font-size:60%;
+  font-style:italic;
+  color:white;
+}
+
+span.footnote { font-size: 60%; position: absolute; left: 0; bottom: 0; }
+span.note { font-size: 80%; }
+
+#git-hosting img { width: 33%; background: white; float: left; margin-right: 3%; }
