@@ -1,0 +1,261 @@
+An introduction to git for research
+========================================================
+author: Tamora James
+date: 2018-11-21
+css: git-training.css
+<div class="title-img">
+<img src="img/xkcd1597_git.png"/>
+<br/>
+Image: xkcd.com/1597
+</div>
+
+
+What's git?
+========================================================
+
+- Version control system
+- Flexible and lightweight design
+- Distributed system
+
+
+Distributed VCS
+========================================================
+id: DVCS
+class: center
+
+<p class="left">Each copy of a <code>git</code>-managed project contains all the information needed to stand alone</p>
+
+<img style="width: 50%" alt="Distributed version control system" src="img/Distributed_VCS.png"/>
+
+Aside: what's GitHub?
+========================================================
+type: prompt
+id: git-hosting
+
+- Hosting service for git repositories
+- Collaboration/code sharing
+- Public and private repositories
+
+![GitHub logo](img/GitHub_Logo.png)
+![Bitbucket logo](img/bitbucket-logo-blue.png)
+![GitLab logo](img/gitlab_wm_no_bg.png)
+
+<span class="footnote">For free private repositories on GitHub, sign up at https://education.github.com</span>
+
+Why use git?
+========================================================
+incremental: true
+
+Motivation is clear for software development:
+
+- _many developers working on large code base_
+- _need to keep track of changes throughout development lifecycle_
+
+But using <code>git</code> also makes sense for research programmers...
+
+Why use git?
+========================================================
+incremental: true
+
+<br/>
+## Pros
+- Track your changes
+- Clean workspace
+- Access your work
+- Share your work
+- Collaborate
+- Archive
+- Experiment
+- Reproducible research
+
+***
+<br/>
+## Cons
+- Learning curve
+- Discipline!
+- Conflict resolution
+
+How does git work?
+========================================================
+incremental: true
+
+- A <code>git</code> project is simply a directory with some hidden files for bookkeeping
+- You tell <code>git</code> which files to manage
+- Three representations of file state in <code>git</code>:
+  * modified files
+  * staged files
+  * committed files
+
+<!-- - Snapshots -->
+<!-- - Working directory -->
+<!-- - Staging area (index) -->
+<!-- - Local repository (<code>.git</code> directory) -->
+<!-- - Remote repository -->
+
+git workflow
+========================================================
+incremental: true
+
+- Set up local repository: &nbsp; <code class="inline">git init</code> &nbsp; or &nbsp; <code class="inline">git clone</code>
+- Add or make changes to files in your project
+- Stage the new/modified files:  &nbsp; <code class="inline">git add</code>
+- Commit your changes: &nbsp; <code class="inline">git commit</code>
+- Push your local changes to a remote repository: &nbsp; <code class="inline">git push</code>
+
+
+Practical git
+========================================================
+
+[Introduction to version control for research](https://github.com/BES2016Workshop/version-control)
+
+**Preliminaries**
+- Install <code>git</code>
+- Sign up for an account on GitHub
+- (Optional) Make sure that RStudio is ready to use git
+
+
+**Practical**
+- Using <code>git</code> on the command line
+- Using <code>git</code> through RStudio
+
+
+Practical git
+========================================================
+- Create a project folder and initialise repository
+
+<pre>
+mkdir myproj
+cd myproj
+git init
+</pre>
+
+- Tell git which file(s) to track
+
+<pre>
+git add &lt;file&gt;
+</pre>
+
+- Commit
+
+<pre>
+git commit
+</pre>
+
+Working with remotes
+========================================================
+- Set up a remote repository (e.g. using GitHub)
+
+- Specify remote URL
+
+<pre>
+git remote add origin &lt;url&gt;
+</pre>
+
+- Push local changes and set up your master branch to track remote changes
+
+<pre>
+git push -u origin master
+</pre>
+
+git configuration
+========================================================
+Set up your identity for commits:
+<pre>
+git config --global user.name "Your Name"
+git config --global user.email yourname@sheffield.ac.uk
+</pre>
+
+Use your preferred editor for commit messages:
+<pre>
+git config --global core.editor emacs
+</pre>
+
+Set up some aliases:
+<pre>
+git config --global alias.co checkout
+</pre>
+
+Summary
+========================================================
+
+**Local operations**
+
+- Inspecting your workspace &nbsp; <code class="inline">git status</code>
+- Staging files &nbsp; <code class="inline">git add &lt;file&gt;</code>
+- Committing files &nbsp; <code class="inline">git commit</code>
+- Review history &nbsp; <code class="inline">git log</code>
+
+**Syncing with a remote**
+- Pushing local changes &nbsp; <code class="inline">git push</code>
+
+<!-- Merging remote changes &nbsp; git pull -->
+
+
+How to use git
+========================================================
+- Commit code that works
+- Write informative log messages
+- Be aware of public vs. private repositories
+- Communicate with collaborators to avoid clashes
+- Use it for reproducible research and documents
+
+git resources
+========================================================
+
+**Documentation, cheatsheets and tutorials**
+- <code class="inline">git help &lt;command&gt;</code>
+- [http://git-scm.com/book](https://git-scm.com/book/en/v2)
+- [git reference/cheatsheets](https://git-scm.com/docs)
+- [git -- the simple guide](http://rogerdudler.github.io/git-guide/)
+
+<br/>
+**Using <code>git</code> with RStudio**
+- [Using Version Control with RStudio](https://support.rstudio.com/hc/en-us/articles/200532077-Version-Control-with-Git-and-SVN)
+
+
+
+Working with git
+========================================================
+class: center
+
+Modify files in the working directory
+
+<!-- ![Files in the working directory](img/git_states-1.png) -->
+<img style="width: 60%" src="img/git_states-1.png" alt="Files in the working directory" />
+
+Working with git
+========================================================
+class: center
+
+Stage files to the index
+
+<!-- ![Files staged to the index](img/git_states-5.png) -->
+<img style="width: 60%" src="img/git_states-5.png" alt="Files staged to the index" />
+
+Working with git
+========================================================
+class: center
+
+Commit files (HEAD = most recent commit)
+
+<!--![Committed files](img/git_states-6.png) -->
+<img style="width: 60%" src="img/git_states-6.png" alt="Committed files" />
+
+Working with git
+========================================================
+class: center
+
+- <code class="inline">HEAD</code> references the most recently committed changes<br/><br/>
+
+![Git snapshots/HEAD](img/git_snapshots-1.png)
+
+Working with git
+========================================================
+class: center
+
+- <code class="inline">HEAD</code> references the most recently committed changes
+- <code class="inline">git commit</code> adds a new link to the chain of commits
+
+![Git snapshots/HEAD](img/git_snapshots-2.png)
+
+
