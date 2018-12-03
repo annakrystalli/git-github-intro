@@ -1,9 +1,45 @@
 ---
-title: "Home"
+title: "GitKraken"
 site: workflowr::wflow_site
 output:
   workflowr::wflow_html:
     toc: false
 ---
 
-Welcome to my research website.
+![](.\assets\gk01.jpg)
+
+## Clone a repository using GitKraken
+
+![](.\assets\clone-1-gk.png)
+
+![](.\assets\clone-2-gk.png)
+- __Where to clone to:__ Select the folder where the repository will be hosted. Let's say _D:/GitHub_.
+- __Repository to close:__ Here you will have a list of all the repositories you have access to and which you can clone. The repositories with the lock icon are _private_ repositories. We will talk about private repositories later. Let's say you choose the repository named _collaborative-github-exercise_.
+- __Full path:__ Here GitKraken will show the full path where the repository will be cloned to. This will be _D:/GitHub/collaborative-github-exercise_.
+
+![](.\assets\clone-3-gk.png)
+
+![](.\assets\clone-4-gk.png)
+- GitKraken tracks down all the history of the cloned repo. All the changes and by who they were made are shown in great detail.
+
+![](.\assets\clone-5-gk.png)
+- This is how the folder you have selected to host your cloned repository will look like.
+
+
+
+## Initialize a repository using GitKraken
+
+![](.\assets\init-1-gk.png)
+
+![](.\assets\init-2-gk.png)
+- __Account:__ In which account you want the repository to be created to. This can be your account or an organization that you have access to.
+- __Name:__  The name of the repository let's say _mytest_.
+- __Description:__ Optional, but every repository should have a small description!
+- __Access:__ Public or Private.
+- __Clone after init:__ This checkbox tells GitKraken to run the clone procedure we did before after creating the new repository.
+- __Where to clone to:__ Select the folder where the repository will be hosted if selected to be cloned. Let's say again _D:/GitHub_.
+- __Full path:__ This should now be _D:/GitHub/mytest_
+- __License:__ A license is mainly a list of permissions that other people who want to use your code can do. For example you may want others to use your code but only if they accredited you. [choosealicense.com](https://choosealicense.com/) can help you choose the right license. For open source repositories MIT and GNU GPLv3 are usually appropriate licenses.
+
+![](.\assets\init-3-gk.png)
+
